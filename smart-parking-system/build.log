@@ -1,0 +1,79 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.parking:smart-parking-system >------------------
+[INFO] Building smart-parking-system 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ smart-parking-system ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ smart-parking-system ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 8 source files with javac [debug parameters release 21] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/kriti/OneDrive/Desktop/smart-parking-system/smart-parking-system/src/main/java/com/parking/smart_parking_system/model/Booking.java:[38,13] cannot find symbol
+  symbol:   class ParkingSlot
+  location: class com.parking.smart_parking_system.model.Booking
+[ERROR] /C:/Users/kriti/OneDrive/Desktop/smart-parking-system/smart-parking-system/src/main/java/com/parking/smart_parking_system/model/Booking.java:[40,67] cannot find symbol
+  symbol:   class ParkingSlot
+  location: class com.parking.smart_parking_system.model.Booking
+[ERROR] /C:/Users/kriti/OneDrive/Desktop/smart-parking-system/smart-parking-system/src/main/java/com/parking/smart_parking_system/repository/ParkingSlotRepository.java:[3,46] cannot find symbol
+  symbol:   class ParkingSlot
+  location: package com.parking.smart_parking_system.model
+[ERROR] /C:/Users/kriti/OneDrive/Desktop/smart-parking-system/smart-parking-system/src/main/java/com/parking/smart_parking_system/repository/ParkingSlotRepository.java:[12,62] cannot find symbol
+  symbol: class ParkingSlot
+[ERROR] /C:/Users/kriti/OneDrive/Desktop/smart-parking-system/smart-parking-system/src/main/java/com/parking/smart_parking_system/repository/ParkingSlotRepository.java:[13,10] cannot find symbol
+  symbol:   class ParkingSlot
+  location: interface com.parking.smart_parking_system.repository.ParkingSlotRepository
+[ERROR] /C:/Users/kriti/OneDrive/Desktop/smart-parking-system/smart-parking-system/src/main/java/com/parking/smart_parking_system/repository/ParkingSlotRepository.java:[15,14] cannot find symbol
+  symbol:   class ParkingSlot
+  location: interface com.parking.smart_parking_system.repository.ParkingSlotRepository
+[ERROR] /C:/Users/kriti/OneDrive/Desktop/smart-parking-system/smart-parking-system/src/main/java/com/parking/smart_parking_system/repository/ParkingSlotRepository.java:[17,10] cannot find symbol
+  symbol:   class ParkingSlot
+  location: interface com.parking.smart_parking_system.repository.ParkingSlotRepository
+[ERROR] /C:/Users/kriti/OneDrive/Desktop/smart-parking-system/smart-parking-system/src/main/java/com/parking/smart_parking_system/repository/ParkingSlotRepository.java:[19,10] cannot find symbol
+  symbol:   class ParkingSlot
+  location: interface com.parking.smart_parking_system.repository.ParkingSlotRepository
+[INFO] 8 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.717 s
+[INFO] Finished at: 2026-02-28T04:07:47+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project smart-parking-system: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/kriti/OneDrive/Desktop/smart-parking-system/smart-parking-system/src/main/java/com/parking/smart_parking_system/model/Booking.java:[38,13] cannot find symbol
+[ERROR]   symbol:   class ParkingSlot
+[ERROR]   location: class com.parking.smart_parking_system.model.Booking
+[ERROR] /C:/Users/kriti/OneDrive/Desktop/smart-parking-system/smart-parking-system/src/main/java/com/parking/smart_parking_system/model/Booking.java:[40,67] cannot find symbol
+[ERROR]   symbol:   class ParkingSlot
+[ERROR]   location: class com.parking.smart_parking_system.model.Booking
+[ERROR] /C:/Users/kriti/OneDrive/Desktop/smart-parking-system/smart-parking-system/src/main/java/com/parking/smart_parking_system/repository/ParkingSlotRepository.java:[3,46] cannot find symbol
+[ERROR]   symbol:   class ParkingSlot
+[ERROR]   location: package com.parking.smart_parking_system.model
+[ERROR] /C:/Users/kriti/OneDrive/Desktop/smart-parking-system/smart-parking-system/src/main/java/com/parking/smart_parking_system/repository/ParkingSlotRepository.java:[12,62] cannot find symbol
+[ERROR]   symbol: class ParkingSlot
+[ERROR] /C:/Users/kriti/OneDrive/Desktop/smart-parking-system/smart-parking-system/src/main/java/com/parking/smart_parking_system/repository/ParkingSlotRepository.java:[13,10] cannot find symbol
+[ERROR]   symbol:   class ParkingSlot
+[ERROR]   location: interface com.parking.smart_parking_system.repository.ParkingSlotRepository
+[ERROR] /C:/Users/kriti/OneDrive/Desktop/smart-parking-system/smart-parking-system/src/main/java/com/parking/smart_parking_system/repository/ParkingSlotRepository.java:[15,14] cannot find symbol
+[ERROR]   symbol:   class ParkingSlot
+[ERROR]   location: interface com.parking.smart_parking_system.repository.ParkingSlotRepository
+[ERROR] /C:/Users/kriti/OneDrive/Desktop/smart-parking-system/smart-parking-system/src/main/java/com/parking/smart_parking_system/repository/ParkingSlotRepository.java:[17,10] cannot find symbol
+[ERROR]   symbol:   class ParkingSlot
+[ERROR]   location: interface com.parking.smart_parking_system.repository.ParkingSlotRepository
+[ERROR] /C:/Users/kriti/OneDrive/Desktop/smart-parking-system/smart-parking-system/src/main/java/com/parking/smart_parking_system/repository/ParkingSlotRepository.java:[19,10] cannot find symbol
+[ERROR]   symbol:   class ParkingSlot
+[ERROR]   location: interface com.parking.smart_parking_system.repository.ParkingSlotRepository
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

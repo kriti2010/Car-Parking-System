@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPark Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo-icon"><i class="fa-solid fa-parking"></i></div>
+                <div class="logo-text">
+                    <h1>SmartPark Pro</h1>
+                    <p id="current-date">Saturday, Feb 28, 2026</p>
+                </div>
+            </div>
+            <div class="time-section">
+                <h2 id="current-time">10:11:50 PM</h2>
+                <p class="status-online"><i class="fa-solid fa-circle-dot"></i> SYSTEM ONLINE</p>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <!-- Sidebar Controls -->
+            <aside class="sidebar">
+                <div class="control-card">
+                    <h3><i class="fa-solid fa-circle-plus"></i> Vehicle Entry</h3>
+
+                    <div class="form-group">
+                        <label>REGISTRATION NUMBER</label>
+                        <input type="text" id="park-plate" placeholder="Enter Plate Number...">
+                    </div>
+
+                    <div class="form-group">
+                        <label>VEHICLE TYPE</label>
+                        <select id="vehicle-type">
+                            <option value="Car">Car</option>
+                            <option value="Bike">Bike</option>
+                            <option value="Truck">Truck</option>
+                        </select>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn-primary" onclick="parkCar()"><i class="fa-solid fa-car"></i> Park</button>
+                        <button class="btn-outline" onclick="bookCar()"><i class="fa-regular fa-calendar"
+                                style="margin-right: 5px;"></i> Book</button>
+                    </div>
+                </div>
+
+                <div class="control-card exit-card">
+                    <h3><i class="fa-solid fa-trash-can" style="color: #ff1744;"></i> Quick Exit</h3>
+
+                    <div class="form-group">
+                        <label>REGISTRATION NUMBER</label>
+                        <input type="text" id="remove-plate" placeholder="Enter Plate Number...">
+                    </div>
+
+                    <button class="btn-danger" onclick="removeCar()">Exit Vehicle</button>
+
+                    <hr style="border-color: var(--border-color); margin: 20px 0;">
+
+                    <div class="form-group">
+                        <label>SLOT NUMBER (TO UNBOOK)</label>
+                        <input type="number" id="unbook-slot" placeholder="e.g. 5" min="1" max="10">
+                    </div>
+
+                    <button class="btn-outline"
+                        style="border-color: var(--danger-red); color: var(--danger-red); width: 100%;"
+                        onclick="unbookSlot()">Release Slot</button>
+                </div>
+
+                <div id="message-container" class="message-box hidden"></div>
+            </aside>
+
+            <!-- Main Content Dash -->
+            <main class="dashboard-content">
+                <!-- Stats -->
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="stat-icon purple"><i class="fa-solid fa-border-all"></i></div>
+                        <div class="stat-info">
+                            <p>CAPACITY</p>
+                            <h3 id="stat-capacity">10</h3>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon red"><i class="fa-solid fa-lock"></i></div>
+                        <div class="stat-info">
+                            <p>PARKED</p>
+                            <h3 id="stat-parked">0</h3>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green"><i class="fa-solid fa-unlock-keyhole"></i></div>
+                        <div class="stat-info">
+                            <p>AVAILABLE</p>
+                            <h3 id="stat-available">10</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="map-container">
+                    <div class="map-header">
+                        <h3><i class="fa-regular fa-paper-plane"
+                                style="transform: rotate(45deg); margin-right: 5px;"></i> Live Parking Map</h3>
+                        <div class="legend">
+                            <span class="legend-item"><i class="fa-solid fa-circle legend-green"></i> FREE</span>
+                            <span class="legend-item"><i class="fa-solid fa-circle legend-red"></i> BUSY</span>
+                        </div>
+                    </div>
+
+                    <div id="slots-container" class="slots-grid">
+                        <!-- Slots injected by JS -->
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

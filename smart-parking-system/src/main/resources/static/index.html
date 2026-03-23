@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPark Pro | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Modern Glass Header -->
+        <header class="top-header">
+            <div class="brand">
+                <div class="logo-icon">
+                    <i data-lucide="parking-circle" color="white" size="28"></i>
+                </div>
+                <div>
+                    <h1>SmartPark Pro</h1>
+                    <span id="liveDate">Saturday, Feb 28 2026</span>
+                </div>
+            </div>
+            <div class="live-status">
+                <span id="liveTime">00:00:00 AM</span>
+                <span style="color: var(--success); font-size: 0.75rem; font-weight: 700;">
+                    <i data-lucide="circle-dot" size="10" style="margin-right: 4px;"></i> SYSTEM ONLINE
+                </span>
+            </div>
+        </header>
+
+        <!-- Sidebar Actions -->
+        <aside class="sidebar">
+            <div class="control-card">
+                <h3><i data-lucide="plus-circle" size="20" color="var(--accent)"></i> Vehicle Entry</h3>
+                <div class="input-field">
+                    <label>Registration Number</label>
+                    <input type="text" id="vehicleInput" placeholder="Enter Plate Number...">
+                </div>
+                <div class="input-field">
+                    <label>Vehicle Type</label>
+                    <select id="vehicleType"
+                        style="width: 100%; background: rgba(255, 255, 255, 0.03); border: 1.5px solid var(--glass-border); border-radius: 14px; padding: 1rem; color: white;">
+                        <option value="CAR">Car</option>
+                        <option value="BIKE">Bike</option>
+                        <option value="TRUCK">Truck</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button id="parkBtn" class="btn btn-primary" style="flex: 2;">
+                        <i data-lucide="car"></i> Park
+                    </button>
+                    <button id="bookBtn" class="btn"
+                        style="flex: 1; background: rgba(99, 102, 241, 0.2); border: 1px solid var(--accent);">
+                        <i data-lucide="calendar"></i> Book
+                    </button>
+                </div>
+            </div>
+
+            <div class="control-card">
+                <h3><i data-lucide="trash-2" size="20" color="var(--danger)"></i> Quick Exit</h3>
+                <div class="input-field">
+                    <label>Slot Number</label>
+                    <input type="number" id="slotInput" placeholder="e.g. 5">
+                </div>
+                <button id="removeBtn" class="btn btn-danger">
+                    <i data-lucide="log-out"></i> Process Exit
+                </button>
+            </div>
+
+            <!-- Occupancy Detail Card -->
+            <div class="control-card">
+                <h3><i data-lucide="pie-chart" size="20" color="var(--warning)"></i> Occupancy</h3>
+                <div class="gauge-box">
+                    <div class="circular-progress" id="occupancyGauge">
+                        <span class="progress-value">0%</span>
+                    </div>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center;">
+                    System automatically re-scans every 5 seconds.
+                </p>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard View -->
+        <main class="main-content">
+            <section class="stats-row">
+                <div class="mini-stat">
+                    <div class="stat-icon" style="background: rgba(99, 102, 241, 0.1); color: #6366f1;">
+                        <i data-lucide="layout-grid"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>Capacity</h4>
+                        <span id="totalSlots">0</span>
+                    </div>
+                </div>
+                <div class="mini-stat">
+                    <div class="stat-icon" style="background: rgba(244, 63, 94, 0.1); color: #f43f5e;">
+                        <i data-lucide="lock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>Parked</h4>
+                        <span id="occupiedSlots">0</span>
+                    </div>
+                </div>
+                <div class="mini-stat">
+                    <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
+                        <i data-lucide="unlock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>Available</h4>
+                        <span id="availableSlots">0</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="parking-lot-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h3 style="display: flex; align-items: center; gap: 0.75rem;">
+                        <i data-lucide="navigation"></i> Live Parking Map
+                    </h3>
+                    <div style="display: flex; gap: 1rem; font-size: 0.75rem; font-weight: 700;">
+                        <span style="display: flex; align-items: center; gap: 0.4rem;">
+                            <span
+                                style="width: 8px; height: 8px; border-radius: 50%; background: var(--success);"></span>
+                            FREE
+                        </span>
+                        <span style="display: flex; align-items: center; gap: 0.4rem;">
+                            <span
+                                style="width: 8px; height: 8px; border-radius: 50%; background: var(--danger);"></span>
+                            BUSY
+                        </span>
+                    </div>
+                </div>
+
+                <div id="slotsContainer" class="grid-viewport">
+                    <!-- Dynamic Slots -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
