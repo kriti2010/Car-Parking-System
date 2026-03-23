@@ -2,19 +2,19 @@
 
 A comprehensive Car Parking Management System built using Java and Vanilla web technologies. The project strongly utilizes Data Structure and Algorithm (DSA) concepts to efficiently manage the parking space and dynamically allocate slots.
 
-## 🗂️ Features
+## Features
 - **Car Entry**: Auto-assign an available slot to an incoming car.
 - **Car Exit**: Remove cars using their license plate.
 - **Queueing**: If parking is full, cars are added to a waiting queue and automatically placed when a spot frees up.
 - **Live Status**: Display visually which slots are occupied.
 
-## 🛠️ Data Structures Used
+## Data Structures Used
 - **Array**: Fixed-size representation of standard parking slots (e.g. 10 slots).
 - **HashMap (`parkedCars`)**: Stores `<LicensePlate, SlotIndex>` for constant time O(1) lookups to instantly find where a car is.
 - **Queue (`waitingQueue`)**: Follows FIFO logic. Arriving cars go to waitlist when the lot is full.
 - **Stack (`recentExits`)**: Follows LIFO logic to track the history of recently departed cars.
 
-## 🚀 How to Run
+## How to Run
 
 1. **Start the Backend**
    - Open your IDE or terminal.
